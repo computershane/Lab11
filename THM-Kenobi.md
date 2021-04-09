@@ -1,5 +1,5 @@
 # TryHackMe
-  -https://tryhackme.com/room/kenobi
+  https://tryhackme.com/room/kenobi
   
 <img src="kenobi.png"
      alt="Kenobi_Marker_icon"
