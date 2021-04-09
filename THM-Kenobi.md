@@ -51,6 +51,18 @@ Recursively downloaded share by
 
 ```smbget -R smb://10.10.152.93/anonymous```
 
+What port is FTP running on?
+
+Answer-```21```
+
+using nmap to enumerate this
+
+```nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount 10.10.152.93```
+
+What mount can we see?
+
+Answer-```/var```
+
 
 
 
