@@ -49,7 +49,7 @@ Answer- ```log.txt```
 
 Recursively downloaded share by 
 
-```smbclient //10.10.152.93/anonymous```
+```smbget -R smb://10.10.152.93/anonymous```
 
 
 
